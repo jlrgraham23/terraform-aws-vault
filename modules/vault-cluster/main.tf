@@ -139,6 +139,12 @@ resource "aws_launch_configuration" "launch_configuration" {
     delete_on_termination = var.root_volume_delete_on_termination
   }
 
+  metadata_options {
+    http_endpoint               = var.launch_configuration_metadata_http_endpoint
+    http_tokens                 = var.launch_configuration_metadata_http_tokens
+    http_put_response_hop_limit = var.launch_configuration_metadata_http_put_response_hop_limit
+  }
+
   # Important note: whenever using a launch configuration with an auto scaling group, you must set
   # create_before_destroy = true. However, as soon as you set create_before_destroy = true in one resource, you must
   # also set it in every resource that it depends on, or you'll get an error about cyclic dependencies (especially when

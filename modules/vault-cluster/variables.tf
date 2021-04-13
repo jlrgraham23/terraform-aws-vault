@@ -242,3 +242,21 @@ variable "iam_permissions_boundary" {
   type        = string
   default     = null
 }
+
+variable "launch_configuration_metadata_http_endpoint" {
+  description = "The metadata_options http_endpoint setting for the launch configuration"
+  type        = string
+  default     = null
+}
+
+variable "launch_configuration_metadata_http_tokens" {
+  description = "The metadata_options http_tokens setting for the launch configuration"
+  type        = string
+  default     = null
+}
+
+variable "launch_configuration_metadata_http_put_response_hop_limit" {
+  description = "The metadata_options http_put_response_hop_limit setting for the launch configuration"
+  type        = number
+  default     = null
+}
